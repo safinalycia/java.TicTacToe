@@ -1,43 +1,50 @@
-package Zadanie6;
+package Zadanie7;
 
-public class Cat extends Animal {
+public class Cat {
+    private String name;
+    private int appetite;
+    private int satiety;
+    public int fullness;
 
-    private int runCat;
-    private int swimCat;
+    public Cat(String name, int appetite, int satiety) {
+        this.name = name;
+        this.appetite = appetite;
+        this.satiety = satiety;
+        this.fullness = 0;
 
+    }
 
-    public Cat(String name, int doRun, int doSwim, int runCat, int swimCat) {
-        super(name, doRun, doSwim, "кошка");
-        this.runCat = 200;
-        this.swimCat = 0;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAppetite() {
+        return appetite;
+    }
+
+    public void setAppetite(int appetite) {
+        this.appetite = appetite;
+    }
+
+    public int getSatiety() {
+        return satiety;
+    }
+
+    public void setSatiety(int satiety) {
+        this.satiety = satiety;
+    }
+
+    void eat(Plate p) {
+        p.decreaseFood(appetite);
     }
 
 
-    public int getRunCat() {
-        return runCat;
-    }
 
-    public void setRunCat(int runCat) {
-        this.runCat = runCat;
-    }
-
-    public int getSwimCat() {
-        return swimCat;
-    }
-
-    public void setSwimCat(int swimCat) {
-        this.swimCat = swimCat;
-    }
-
-    @Override
-    public void printInfo() {
-        super.printInfo();
-        System.out.printf("пробежала %s и проплыла %s, не умеет плавать%n", runCat, swimCat);
-    }
-
-    @Override
-    public void Animalcounting() {
-        System.out.printf("в дистанциях бег и плавание учавствуют: %s%n", getName());
-
+    public void info(){
+        System.out.println();
     }
 }
